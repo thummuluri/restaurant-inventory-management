@@ -1,0 +1,36 @@
+.items-card-style {
+  max-width: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-inside: 10px;
+  margin-outside: 10px;
+}
+
+.items-card-style mat-card-title {
+  text-align: center;
+}
+
+.items-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.page-title {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.mat-card {
+  margin-top: 10px;
+}
+
+.search-input {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+}

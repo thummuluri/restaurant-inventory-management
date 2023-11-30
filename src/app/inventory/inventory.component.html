@@ -1,0 +1,29 @@
+<mat-progress-bar *ngIf="loading$ | async" color="accent" mode="indeterminate"></mat-progress-bar>
+<div>
+  <mat-card class="mat-card">
+    <h1 class="page-title">Inventory Details</h1>
+    <mat-card-content>
+      <mat-form-field class="search-input" appearance="outline">
+        <input matInput type="text" placeholder="Search Items..." [(ngModel)]="searchTerm" (ngModelChange)="filterInventory()">
+      </mat-form-field>
+      <div class="items-card-container">
+        <mat-card *ngFor="let inventory of (searchTerm ? filteredInventory : inventory)" class="items-card-style">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title>{{ inventory.item_name }}</mat-card-title>
+              <mat-card-title><img [src]= "S3URL+inventory.item_name+ext" alt="loading...." mat-card-image mat-card-lg-image>
+              </mat-card-title>
+              <mat-card-subtitle>Available Quantity: {{ inventory.item_quantity }}</mat-card-subtitle>
+              <mat-card-subtitle>Threshold Quantity: {{ inventory.item_threshold }}</mat-card-subtitle>
+              <mat-card-subtitle>Unit Price: {{ inventory.item_unit_price | currency:'USD'}}</mat-card-subtitle>
+              <mat-card-subtitle>Received On: {{ inventory.item_received_date  | date }}</mat-card-subtitle>
+              <mat-card-subtitle>Best By: {{ inventory.best_before_date  | date }}</mat-card-subtitle>
+            </mat-card-title-group>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
